@@ -1,0 +1,38 @@
+<html lang="de">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Responsive menu - adavanced chechbox hack - animated burgers</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+    </head>
+
+    <body>
+        <nav>
+            <input type="checkbox" id="button" />
+            <label for="button" onclick></label>
+
+            <button class="hamburger hamburger--collapse" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+
+            <ul>
+                <li><a href="#">Apples</a></li>
+                <li><a href="#">Bananas</a></li>
+                <li><a href="#">Kiwis</a></li>
+                <li><a href="#">Peaches</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h1>Welcome!</h1>
+            <p>Resize your browser window to switch to the mobile menu view.</p>
+        </main>
+
+        <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+    </body>
+
+</html>

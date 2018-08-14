@@ -1,0 +1,150 @@
+// JUST SOME EXTRA STYLING
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  padding: 1em;
+  background: white;
+}
+
+body {
+  background: #eee;
+}
+
+body, ul {
+  margin: 0; // you don't need this if you use CSSreset
+}
+
+main {
+  padding: 1em 1em;
+}
+
+h1 {
+  color: seagreen;
+  font-weight: normal;
+  font-size: 2em;
+  padding: 0.5em 0;
+}
+
+// NAVIGATION STYLES BEGIN
+// Fix Android bug
+body {
+  -webkit-animation: bugfix infinite 1s;
+}
+
+@-webkit-keyframes bugfix {
+  from {
+    padding: 0;
+  }
+  to {
+    padding: 0;
+  }
+}
+
+nav {
+  // hide checkbox
+  input[type=checkbox] {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1em 0;
+    line-height: 1;
+    background-color: seagreen;
+  }
+
+  a {
+    color: #ddd;
+    text-decoration: none;
+    &:hover {
+      color: white;
+    }
+  }
+
+  label {
+    display: none;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .hamburger {
+    display: none;
+    background-color: seagreen;
+  }
+}
+
+/* small screens */
+@media screen and (max-width: 44em) {
+  nav {
+    position: relative;
+
+    ul {
+      position: absolute;
+      display: block;
+      width: 100%;
+      padding: 0;
+      list-style: none;
+      transform: translateY(calc(-100% - 1em));
+      transition: all cubic-bezier(.42, .0, .58, 1.0) .3s;
+      opacity: .75;
+    }
+
+    li:first-of-type {
+      border-top: 1px solid gray;
+    }
+
+    li {
+      padding: 1.15em;
+      margin: 0;
+      background-color: white;
+      border-bottom: 1px solid gray;
+      transition: background-color .3s ease;
+      &:hover {
+        background-color: seagreen;
+        cursor: pointer;
+        & a {
+          color: white;
+        }
+      }
+    }
+
+    a {
+      display: inline-block;
+      width: 100%;
+      color: black;
+      &:hover {
+        color: white;
+      }
+    }
+
+    label {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      display: block;
+      width: 4em;
+      height: 3em;
+    }
+
+    input[type=checkbox]:checked ~ ul {
+      display: block;
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .hamburger {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 5;
+      display: block;
+    }
+  }
+}
